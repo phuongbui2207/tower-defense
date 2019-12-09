@@ -63,7 +63,6 @@ public class TowerButton {
                     GameUpdate.coins -= 100;
                     Land.CHECK[a.y][a.x] = false;
                     status = 0;
-
                 }
             }
 
@@ -74,11 +73,9 @@ public class TowerButton {
                     CreateTower.createTowerByOrder(12, a.y, a.x);
                     GameUpdate.coins -= 200;
                     Land.CHECK[a.y][a.x] = false;
-                    status = 0;
-
                 }
-
             }
+
             if (status == 13 && GameUpdate.coins >= 150) {
                 Point a = MenuButton.find((int)event.getSceneX(), (int) event.getSceneY()+32);
                 //towerList.add(TowerIce.createTower(a.y, a.x));
@@ -86,10 +83,9 @@ public class TowerButton {
                     CreateTower.createTowerByOrder(13, a.y, a.x);
                     GameUpdate.coins -= 150;
                     Land.CHECK[a.y][a.x] = false;
-                    status = 0;
-
                 }
             }
+            status = 0;
             root.getChildren().remove(imageView);
 
         });
